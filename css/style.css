@@ -22,17 +22,22 @@ body {
   overflow-y: auto;
 }
 
-/* Right column */
+/* RIGHT COLUMN (menu container) */
 .right {
   position: fixed;
   top: 1.75in;
-  right: 0.5in;       /* .25" margin from browser edge */
-  width: 200px;       /* adjust if needed */
-  max-width: 20vw;
-  height: calc(100vh - 1.75in);
-  padding: 1rem;
+  right: 0.25in;              /* TRUE .25" margin from browser edge */
+  width: 240px;               /* fixed, predictable width */
+  max-width: calc(100vw - 0.25in);
   box-sizing: border-box;
-  overflow-y: auto;   /* scroll if needed */
+  overflow-y: auto;
+}
+
+/* Ensure embedded menu respects width */
+.right object {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Menu items */
