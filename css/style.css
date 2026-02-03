@@ -26,22 +26,22 @@ body {
 .right {
   position: fixed;
   top: 1.75in;
-  right: 0.5in; /* .25" margin from browser edge */
-  width: 200px;  /* adjust if needed */
+  right: 0.5in;       /* .25" margin from browser edge */
+  width: 200px;       /* adjust if needed */
   max-width: 20vw;
   height: calc(100vh - 1.75in);
   padding: 1rem;
   box-sizing: border-box;
-  overflow-y: auto; /* scroll if needed */
+  overflow-y: auto;   /* scroll if needed */
 }
 
 /* Menu items */
 .right nav .menu-item {
   font-weight: normal;
-  color: #000; /* black text */
-  white-space: nowrap; /* ensures single line text */
-  text-overflow: ellipsis; /* if text too long, add ... */
-  overflow: hidden;
+  color: #000;           /* black text */
+  white-space: nowrap;    /* forces single-line text */
+  overflow: hidden;       /* prevent bleeding off page */
+  text-overflow: ellipsis; /* shows "..." if too long */
   margin-bottom: 0.5rem;
 }
 
