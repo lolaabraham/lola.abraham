@@ -8,25 +8,18 @@
 </head>
 <body>
 
+  <!-- Left Column -->
   <div class="left">
     <strong>Your Name</strong><br />
     Studio for Art & Architecture
   </div>
 
-  <div class="right">
-    <nav>
-      <details open>
-        <summary>Menu</summary>
-        <a href="cobalt.html">Cobalt, ON | 47.3953° N, 79.6861° W</a>
-        <a href="rehousing.html">for ReHousing</a>
-        <a href="newgoods.html">New Goods</a>
-        <a href="birsay.html">Birsay</a>
-        <a href="lga.html">for LGA Architectural Partners</a>
-        <a href="kyra.html">for Kyra Clarkson Architect</a>
-      </details>
-    </nav>
+  <!-- Right Column -->
+  <div class="right" id="menu-container">
+    <!-- Menu will load here from menu.html -->
   </div>
 
+  <!-- Center Content -->
   <div class="center">
     <section>
       <h2>Welcome</h2>
@@ -53,6 +46,15 @@
 
     </section>
   </div>
+
+  <!-- Load menu dynamically -->
+  <script>
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu-container').innerHTML = data;
+      });
+  </script>
 
 </body>
 </html>
