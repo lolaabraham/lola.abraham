@@ -1,55 +1,112 @@
-/* --- Navigation: basic styling --- */
-nav {
+/* --- Global --- */
+body {
+  margin: 0;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.6;
 }
 
-/* Top-level menu items */
-nav > details > summary {
+/* --- Left Column --- */
+.left {
+  position: fixed;
+  top: 1.75in;      /* top margin */
+  left: 0.5in;      /* left margin from edge */
+  width: 200px;     /* fixed width */
+}
+
+/* --- Right Column --- */
+.right {
+  position: fixed;
+  top: 1.75in;      /* top margin */
+  right: 0.5in;     /* right margin from edge */
+  width: 200px;     /* fixed width */
+  max-width: 20vw;  /* responsive cap */
+  height: calc(100vh - 1.75in);
+  overflow-y: auto; /* scroll if menu is too tall */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Prevent text overflow */
+.right nav a {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  color: #000;
+  text-decoration: none;
+}
+
+/* --- Center Column --- */
+.center {
+  margin-left: calc(200px + 0.5in);   /* left column + gap */
+  margin-right: calc(200px + 0.75in); /* right column + gap */
+  padding: 2rem;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* --- Menu Styling --- */
+nav details > summary {
   cursor: pointer;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  list-style: none;
 }
 
-/* Top-level links (directly under <details>) */
-nav > details > a {
+nav details > a {
   display: block;
-  text-decoration: none;
-  color: inherit;
-  padding-left: 1rem;  /* slight indent for top-level links */
+  padding-left: 1rem;
 }
-nav > details > a::before {
-  content: '+ ';       /* plus for top-level items */
+nav details > a::before {
+  content: '+ '; /* top-level indicator */
 }
 
-/* First-level subsections */
 nav a.subsection {
   display: block;
-  padding-left: 2rem;  /* indent more than top-level */
+  padding-left: 2rem;
 }
 nav a.subsection::before {
-  content: '· ';       /* bullet for first-level subsection */
+  content: '· ';
   margin-right: 0.3rem;
 }
 
-/* Second-level subsections */
 nav a.subsubsection {
   display: block;
-  padding-left: 3rem;  /* indent more than first-level */
+  padding-left: 3rem;
 }
 nav a.subsubsection::before {
-  content: '· ';       /* bullet for second-level subsection */
+  content: '· ';
   margin-right: 0.3rem;
 }
 
-/* Collapsible <details> inside the menu */
 nav details details summary {
   cursor: pointer;
-  padding-left: 2rem;  /* match first-level indentation */
+  padding-left: 2rem;
   font-weight: normal;
 }
 
 /* Hover effect */
 nav a:hover {
   text-decoration: underline;
+}
+
+/* Active section highlight */
+nav a.active {
+  font-weight: bold;
+  color: #c00;
+}
+
+/* --- Responsive --- */
+@media (max-width: 800px) {
+  .left, .right {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0.5in 1rem;
+  }
+
+  .center {
+    margin: 0;
+    padding: 2rem 1rem;
+  }
 }
