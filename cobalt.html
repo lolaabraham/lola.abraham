@@ -1,86 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cobalt, ON | Your Name / Studio</title>
+  <meta charset="UTF-8">
+  <title>Cobalt - Art & Architecture</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <!-- Left Column -->
   <div class="left">
-    <strong>Your Name</strong><br />
-    Studio for Art & Architecture
+    <h1>Logo</h1>
   </div>
 
-  <!-- Right Column -->
-  <div class="right" id="menu-container">
-    <!-- Menu will load here from menu.html -->
-  </div>
-
-  <!-- Center Content -->
+  <!-- Center Column -->
   <div class="center">
-    <section>
-      <h2>Cobalt, ON | 47.3953° N, 79.6861° W</h2>
+    <section id="past">
+      <h2>Past</h2>
+      <p>Content about Cobalt’s past.</p>
+    </section>
 
-      <details>
-        <summary>Past</summary>
-        <p>Content about Cobalt’s past.</p>
-      </details>
+    <section id="present">
+      <h2>Present</h2>
+      <article id="property">
+        <h3>Property</h3>
+        <p>Content about Property...</p>
+      </article>
+      <article id="extraction">
+        <h3>Extraction</h3>
+        <p>Content about Extraction...</p>
+      </article>
+      <article id="violence">
+        <h3>Violence</h3>
+        <p>Content about Violence...</p>
+      </article>
+      <article id="toxicity">
+        <h3>Toxicity</h3>
+        <p>Content about Toxicity...</p>
+      </article>
+      <article id="loss">
+        <h3>Loss</h3>
+        <p>Content about Loss...</p>
+      </article>
+      <article id="resilience">
+        <h3>Resilience</h3>
+        <p>Content about Resilience...</p>
+      </article>
+    </section>
 
-      <details>
-        <summary>Present</summary>
-        <p>Content about the present period.</p>
-
-        <details>
-          <summary>Property</summary>
-          <p>Details about property in Cobalt.</p>
-        </details>
-
-        <details>
-          <summary>Extraction</summary>
-          <p>Details about extraction in Cobalt.</p>
-        </details>
-
-        <details>
-          <summary>Violence</summary>
-          <p>Details about violence in Cobalt.</p>
-        </details>
-
-        <details>
-          <summary>Toxicity</summary>
-          <p>Details about toxicity in Cobalt.</p>
-        </details>
-
-        <details>
-          <summary>Loss</summary>
-          <p>Details about loss in Cobalt.</p>
-        </details>
-
-        <details>
-          <summary>Resilience</summary>
-          <p>Details about resilience in Cobalt.</p>
-        </details>
-
-      </details>
-
-      <details>
-        <summary>Future</summary>
-        <p>Content about the future of Cobalt.</p>
-      </details>
-
+    <section id="future">
+      <h2>Future</h2>
+      <p>Content about Cobalt’s future.</p>
     </section>
   </div>
 
-  <!-- Load menu dynamically -->
-  <script>
-    fetch('menu.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('menu-container').innerHTML = data;
-      });
-  </script>
+  <!-- Right Column Menu -->
+  <div class="right">
+    <object type="text/html" data="menu.html" style="width:100%; height:100%; border:none;"></object>
+  </div>
 
 </body>
 </html>
