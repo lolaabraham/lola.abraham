@@ -1,60 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name / Studio</title>
+  <meta charset="UTF-8">
+  <title>Home - Art & Architecture</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <!-- Left Column -->
   <div class="left">
-    <strong>Your Name</strong><br />
-    Studio for Art & Architecture
+    <h1>Logo</h1>
   </div>
 
-  <!-- Right Column -->
-  <div class="right" id="menu-container">
-    <!-- Menu will load here from menu.html -->
-  </div>
-
-  <!-- Center Content -->
+  <!-- Center Column -->
   <div class="center">
     <section>
       <h2>Welcome</h2>
-
-      <details>
-        <summary>Introduction</summary>
-        <p>Introductory text about your studio goes here.</p>
-      </details>
-
-      <details>
-        <summary>Projects Overview</summary>
-        <p>Summary of main projects and work.</p>
-      </details>
-
-      <details>
-        <summary>Exhibitions / Events</summary>
-        <p>Past exhibitions, events, or collaborations can be listed here.</p>
-      </details>
-
-      <details>
-        <summary>Publications / Press</summary>
-        <p>Any publications, media coverage, or press highlights can go here.</p>
-      </details>
-
+      <p>This is the home page content for the Art & Architecture site.</p>
+      <p>Scroll down to see more sections.</p>
     </section>
   </div>
 
-  <!-- Load menu dynamically -->
-  <script>
-    fetch('menu.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('menu-container').innerHTML = data;
-      });
-  </script>
+  <!-- Right Column Menu -->
+  <div class="right">
+    <object type="text/html" data="menu.html" style="width:100%; height:100%; border:none;"></object>
+  </div>
 
 </body>
 </html>
