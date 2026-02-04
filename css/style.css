@@ -1,91 +1,63 @@
-/* --- Global --- */
+/* ---------- Global ---------- */
 body {
   margin: 0;
-  font-family: Helvetica, Arial, sans-serif;
   line-height: 1.6;
+  background: #fff;
 }
 
-/* --- Left Column --- */
+/* ---------- Left Column ---------- */
 .left {
   position: fixed;
   top: 1.75in;
   left: 0.5in;
   width: 200px;
+  box-sizing: border-box;
 }
 
-/* --- Center Column --- */
-.center {
-  margin-left: calc(200px + 0.5in);
-  margin-right: calc(264px + 0.5in); /* updated */
-  padding: 2rem;
-  height: 100vh;
-  overflow-y: auto;
-}
-
-/* RIGHT COLUMN (menu container) */
+/* ---------- Right Column (menu container only) ---------- */
 .right {
   position: fixed;
   top: 1.75in;
-  right: 0.25in;              /* TRUE .25" margin from browser edge */
-  width: 240px;               /* fixed, predictable width */
+  right: 0.25in;        /* true .25" margin from browser edge */
+  width: 240px;
   max-width: calc(100vw - 0.25in);
   box-sizing: border-box;
   overflow-y: auto;
 }
 
-/* Ensure embedded menu respects width */
+/* Ensure embedded menu fills column */
 .right object {
   width: 100%;
-  height: auto;
   display: block;
+  border: none;
 }
 
-/* Menu items */
-.right nav .menu-item {
-  font-weight: normal;
-  color: #000;           /* black text */
-  white-space: nowrap;    /* forces single-line text */
-  overflow: hidden;       /* prevent bleeding off page */
-  text-overflow: ellipsis; /* shows "..." if too long */
-  margin-bottom: 0.5rem;
+/* ---------- Center Column ---------- */
+.center {
+  margin-left: calc(200px + 0.5in);
+  margin-right: calc(240px + 0.5in);
+  padding: 2rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  /* Content typography */
+  font-family: 'EB Garamond', serif;
+  font-size: 10pt;
+  color: #333333;
+  text-align: justify;
 }
 
-nav a {
-  display: block;
-  text-decoration: none;
-  color: #000;
-  padding-left: 1rem;
-  margin-bottom: 0.2rem;
+/* Paragraph rhythm */
+.center p {
+  margin-bottom: 1em;
 }
 
-nav a.subsection {
-  padding-left: 2rem;
-}
-
-nav a.subsubsection {
-  padding-left: 3rem;
-}
-
-nav a:hover,
-nav a.active {
-  text-decoration: underline;
-  font-weight: bold;
-  color: #c00;
-}
-
-/* Prevent menu text overflow */
-nav a {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-/* --- Responsive --- */
+/* ---------- Responsive ---------- */
 @media (max-width: 800px) {
-  .left, .right {
+  .left,
+  .right {
     position: static;
     width: 100%;
-    max-width: 100%;
-    height: auto;
     margin: 0;
     padding: 1rem;
   }
