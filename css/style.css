@@ -54,6 +54,11 @@ body {
   margin-bottom: 1em;
 }
 
+/* Align first element with menu */
+.center > :first-child {
+  margin-top: 0;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 800px) {
   .left,
