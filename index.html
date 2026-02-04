@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Home - Art & Architecture</title>
   <link rel="stylesheet" href="css/style.css">
+  <!-- EB Garamond font -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -22,9 +24,15 @@
   </div>
 
   <!-- Right Column Menu -->
-  <div class="right">
-    <iframe src="menu.html" style="width:100%; height:100%; border:none;"></iframe>
-  </div>
+  <div class="right" id="menu-container"></div>
 
+  <!-- Inject centralized menu -->
+  <script>
+    fetch('menu.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('menu-container').innerHTML = html;
+      });
+  </script>
 </body>
 </html>
