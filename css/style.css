@@ -34,6 +34,10 @@ body {
 
 /* ---------- Center Column ---------- */
 .center {
+  /* Remove top margin from first text element in center column */
+.center > *:first-child {
+  margin-top: 0;
+}
   margin-left: calc(200px + 0.5in);
   margin-right: calc(240px + 0.5in);
   margin-top: 1.75in;     /* aligns with menu top */
