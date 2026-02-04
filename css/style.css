@@ -37,6 +37,7 @@ body {
   margin-left: calc(200px + 0.5in);
   margin-right: calc(240px + 0.5in);
   padding: 2rem;
+  padding-top: 1.75in;   /* aligns with menu top */
   min-height: 100vh;
   box-sizing: border-box;
 
